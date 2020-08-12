@@ -12,12 +12,15 @@ public class 求一加二加三到N {
 
     /**
      * 解法:
-     * 题目作了很多限制，让很多方法都不能使用，因此这边使用了一个
+     * 题目作了很多限制，循环不让使用，因此用递归来代替循环加法，if不让使用，因此使用了一个 &&的短路效果 来作为递归的条件判断
+     * &&短路：当&&前的判断语句结果为false时，后面的的判断将不会执行
      */
-    public int sumNums(int n) {
+    public static int sumNums(int n) {
+        boolean x =n>0&&(n+=sumNums(n-1))>0;
+        return n;
+    }
 
-
-
-        return -1;
+    public static void main(String[] args) {
+        System.out.println(sumNums(4));
     }
 }
