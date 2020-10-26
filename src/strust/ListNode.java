@@ -13,4 +13,10 @@ public class ListNode {
                 ", next=" + next +
                 '}';
     }
+
+    public ListNode addNode (int val){
+        ListNode node = new ListNode(val);
+        this.next = node;
+        return node;
+    }
 }
